@@ -1,0 +1,167 @@
+/**
+ * FindU Public Portal — Design Tokens & Visual Constitution
+ * Strict 3-variable interface palette: --paper (#FAF8F5), --ink (#141414), --accent (#C84B31)
+ */
+
+:root {
+  /* ==========================================================================
+     1. STRICT INTERFACE PALETTE (Three Core Variables)
+     ========================================================================== */
+  --paper: #FAF8F5; /* Archival off-white / photographic paper */
+  --ink: #141414;   /* Obsidian carbon ink / high-contrast structural text */
+  --accent: #C84B31; /* Kodachrome / Darkroom Safelight Vermilion (~620nm) */
+
+  /* Derived ink opacities for architectural hierarchy without extra hues */
+  --ink-90: rgba(20, 20, 20, 0.90);
+  --ink-70: rgba(20, 20, 20, 0.70);
+  --ink-50: rgba(20, 20, 20, 0.50);
+  --ink-30: rgba(20, 20, 20, 0.30);
+  --ink-15: rgba(20, 20, 20, 0.15);
+  --ink-08: rgba(20, 20, 20, 0.08);
+  --ink-04: rgba(20, 20, 20, 0.04);
+
+  /* Derived accent opacities for focused states */
+  --accent-15: rgba(200, 75, 49, 0.15);
+  --accent-08: rgba(200, 75, 49, 0.08);
+
+  /* Derived paper tones for raised surfaces */
+  --paper-pure: #FFFFFF;
+  --paper-dim: #F2EFE9;
+  --paper-92: rgba(250, 248, 245, 0.92);
+
+  /* ==========================================================================
+     2. TYPOGRAPHY HIERARCHY & SPECIFICATIONS
+     ========================================================================== */
+  --font-serif: "Newsreader", "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "SF Mono", Menlo, Consolas, "Courier New", monospace;
+
+  /* Type Scale */
+  --text-xs: 0.75rem;    /* 12px */
+  --text-sm: 0.84375rem; /* 13.5px */
+  --text-base: 0.9375rem;/* 15px */
+  --text-md: 1.0625rem;  /* 17px */
+  --text-lg: 1.25rem;    /* 20px */
+  --text-xl: 1.5rem;     /* 24px */
+  --text-2xl: 1.875rem;  /* 30px */
+  --text-3xl: 2.375rem;  /* 38px */
+  --text-4xl: 3.125rem;  /* 50px */
+  --text-5xl: 3.875rem;  /* 62px */
+
+  /* Line Heights */
+  --leading-none: 1.0;
+  --leading-tight: 1.18;
+  --leading-snug: 1.35;
+  --leading-normal: 1.55;
+  --leading-relaxed: 1.7;
+
+  /* Letter Spacing */
+  --tracking-tighter: -0.035em;
+  --tracking-tight: -0.018em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.04em;
+  --tracking-wider: 0.08em;
+  --tracking-widest: 0.14em;
+
+  /* Font Weights */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  /* ==========================================================================
+     3. SPACING & LAYOUT GEOMETRY
+     ========================================================================== */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --space-20: 80px;
+  --space-24: 96px;
+
+  /* Container & Content Widths */
+  --container-max: 1240px;
+  --content-editorial: 780px;
+  --content-narrow: 640px;
+
+  /* Gutters */
+  --gutter-mobile: 16px;
+  --gutter-tablet: 24px;
+  --gutter-desktop: 40px;
+
+  /* Borders & Hairlines */
+  --border-hairline: 1px solid var(--ink-15);
+  --border-subtle: 1px solid var(--ink-08);
+  --border-solid: 1px solid var(--ink);
+  --border-heavy: 2px solid var(--ink);
+  --border-accent: 1px solid var(--accent);
+  --border-accent-heavy: 2px solid var(--accent);
+
+  /* Geometry / Radii: Square corners by default per constitution */
+  --radius-square: 0px;
+  --radius-dot: 9999px; /* Status indicator lights only */
+
+  /* Focus Indicator Ring */
+  --focus-outline: 2px solid var(--ink);
+  --focus-offset: 3px;
+
+  /* ==========================================================================
+     4. TRANSITIONS & MOTION PREFERENCES
+     ========================================================================== */
+  --transition-fast: 120ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   5. DARK THEME TOKEN OVERRIDES
+   Applied when [data-theme="dark"] attribute is set on <html>
+   The canonical light palette (--paper, --ink, --accent) is preserved as-is.
+   ========================================================================== */
+[data-theme="dark"] {
+  /* Backgrounds */
+  --paper: #141414;          /* Deep carbon — inverted from light ink */
+  --paper-pure: #1C1C1C;     /* Elevated surface, slightly lighter */
+  --paper-dim: #111111;      /* Recessed / inset surface */
+  --paper-92: rgba(28, 28, 28, 0.92);
+
+  /* Text */
+  --ink: #F0EDE8;            /* Warm off-white — inverted from light paper */
+  --ink-90: rgba(240, 237, 232, 0.90);
+  --ink-70: rgba(240, 237, 232, 0.70);
+  --ink-50: rgba(240, 237, 232, 0.50);
+  --ink-30: rgba(240, 237, 232, 0.30);
+  --ink-15: rgba(240, 237, 232, 0.15);
+  --ink-08: rgba(240, 237, 232, 0.08);
+  --ink-04: rgba(240, 237, 232, 0.04);
+
+  /* Accent stays close to canonical but slightly brightened for dark bg readability */
+  --accent: #E05A3A;         /* Slightly brightened vermilion for dark backgrounds */
+  --accent-15: rgba(224, 90, 58, 0.18);
+  --accent-08: rgba(224, 90, 58, 0.10);
+
+  /* Borders */
+  --border-hairline: 1px solid rgba(240, 237, 232, 0.15);
+  --border-subtle: 1px solid rgba(240, 237, 232, 0.08);
+  --border-solid: 1px solid rgba(240, 237, 232, 0.85);
+  --border-heavy: 2px solid rgba(240, 237, 232, 0.85);
+  --border-accent: 1px solid #E05A3A;
+  --border-accent-heavy: 2px solid #E05A3A;
+
+  /* Focus */
+  --focus-outline: 2px solid #F0EDE8;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms !important;
+    --transition-normal: 0ms !important;
+    --transition-slow: 0ms !important;
+  }
+}
+
