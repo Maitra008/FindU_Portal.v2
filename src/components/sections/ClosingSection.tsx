@@ -15,10 +15,11 @@ export const ClosingSection: React.FC = () => {
         style={{
           border: '2px solid var(--ink)',
           backgroundColor: 'var(--paper-pure)',
-          padding: 'var(--space-8)',
+          padding: 'clamp(var(--space-4), 4vw, var(--space-8))',
           display: 'flex',
           flexDirection: 'column',
           gap: 'var(--space-6)',
+          minWidth: 0,
         }}
       >
         <div
@@ -69,6 +70,7 @@ export const ClosingSection: React.FC = () => {
             backgroundColor: 'var(--paper)',
             padding: 'var(--space-4)',
             border: '1px solid var(--ink-15)',
+            minWidth: 0,
           }}
         >
           <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--ink-70)', marginBottom: '4px' }}>
@@ -81,6 +83,8 @@ export const ClosingSection: React.FC = () => {
               color: 'var(--ink)',
               lineHeight: 'var(--leading-relaxed)',
               display: 'block',
+              overflowWrap: 'anywhere',
+              wordBreak: 'break-word',
             }}
           >
             FindU Architecture Group (2026). "FindU: Multi-Camera Spatio-Temporal Tracking &amp; Forensic Face Recognition for Missing Persons." Public Portal v2.0. https://github.com/Maitra008/FindU

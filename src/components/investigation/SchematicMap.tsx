@@ -19,14 +19,16 @@ export const SchematicMap: React.FC<SchematicMapProps> = ({
       style={{
         border: '1px solid var(--ink-15)',
         backgroundColor: 'var(--paper)',
-        padding: 'var(--space-4)',
+        padding: 'clamp(var(--space-3), 3vw, var(--space-4))',
         display: 'flex',
         flexDirection: 'column',
         gap: 'var(--space-3)',
+        minWidth: 0,
+        maxWidth: '100%',
       }}
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
             Transit Hub Schematic Topology
           </span>
@@ -41,7 +43,10 @@ export const SchematicMap: React.FC<SchematicMapProps> = ({
       <div
         style={{
           width: '100%',
+          maxWidth: '100%',
+          minWidth: 0,
           overflowX: 'auto',
+          WebkitOverflowScrolling: 'touch',
           backgroundColor: 'var(--paper-dim)',
           border: '1px solid var(--ink-15)',
           padding: 'var(--space-2)',
@@ -49,7 +54,7 @@ export const SchematicMap: React.FC<SchematicMapProps> = ({
       >
         <svg
           viewBox="0 0 760 260"
-          style={{ width: '100%', height: 'auto', minWidth: '580px', display: 'block' }}
+          style={{ width: '100%', height: 'auto', minWidth: '460px', display: 'block' }}
           role="img"
           aria-label="Schematic topological map of transit camera nodes"
         >

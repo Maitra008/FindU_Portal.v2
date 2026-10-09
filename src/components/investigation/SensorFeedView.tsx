@@ -79,15 +79,17 @@ export const SensorFeedView: React.FC<SensorFeedViewProps> = ({ camera }) => {
         <div
           style={{
             position: 'absolute',
-            top: '12px',
-            left: '12px',
+            top: '8px',
+            left: '8px',
             backgroundColor: 'rgba(20, 20, 20, 0.85)',
             border: '1px solid rgba(255, 255, 255, 0.2)',
-            padding: '4px 8px',
+            padding: '3px 6px',
             fontFamily: 'var(--font-mono)',
             fontSize: '10px',
             color: '#E0E0E0',
-            lineHeight: 1.4,
+            lineHeight: 1.3,
+            maxWidth: '55%',
+            overflowWrap: 'break-word',
           }}
         >
           <div>NODE: {camera.nodeId} // {camera.locationCode}</div>
@@ -99,20 +101,22 @@ export const SensorFeedView: React.FC<SensorFeedViewProps> = ({ camera }) => {
         <div
           style={{
             position: 'absolute',
-            top: '12px',
-            right: '12px',
+            top: '8px',
+            right: '8px',
             backgroundColor: 'rgba(20, 20, 20, 0.85)',
             border: '1px solid rgba(255, 255, 255, 0.2)',
-            padding: '4px 8px',
+            padding: '3px 6px',
             fontFamily: 'var(--font-mono)',
             fontSize: '10px',
             color: '#E0E0E0',
             textAlign: 'right',
-            lineHeight: 1.4,
+            lineHeight: 1.3,
+            maxWidth: '42%',
+            overflowWrap: 'break-word',
           }}
         >
           <div>BLUR VAR: {camera.laplacianScore.toFixed(3)} (PASS &ge; 0.65)</div>
-          <div style={{ color: 'var(--accent)' }}>FLAGGED CANDIDATE LOCATED</div>
+          <div style={{ color: 'var(--accent)' }}>FLAGGED CANDIDATE</div>
         </div>
 
         {/* Central Simulated Candidate Localization Box (SCRFD Box) */}
@@ -120,7 +124,7 @@ export const SensorFeedView: React.FC<SensorFeedViewProps> = ({ camera }) => {
           style={{
             position: 'absolute',
             top: '28%',
-            left: '42%',
+            left: '38%',
             width: '120px',
             height: '150px',
             border: '2px solid var(--accent)',
@@ -130,6 +134,7 @@ export const SensorFeedView: React.FC<SensorFeedViewProps> = ({ camera }) => {
             justifyContent: 'space-between',
             padding: '4px',
             boxShadow: '0 0 16px rgba(200, 75, 49, 0.35)',
+            maxWidth: 'calc(100% - 16px)',
           }}
         >
           {/* Top Tag inside Bounding Box */}
@@ -185,16 +190,20 @@ export const SensorFeedView: React.FC<SensorFeedViewProps> = ({ camera }) => {
         <div
           style={{
             position: 'absolute',
-            bottom: '12px',
-            left: '12px',
+            bottom: '8px',
+            left: '8px',
             fontFamily: 'var(--font-mono)',
-            fontSize: '10px',
+            fontSize: '9px',
             color: 'rgba(255, 255, 255, 0.7)',
-            backgroundColor: 'rgba(20, 20, 20, 0.8)',
-            padding: '3px 6px',
+            backgroundColor: 'rgba(20, 20, 20, 0.85)',
+            padding: '2px 6px',
+            maxWidth: 'calc(100% - 16px)',
+            overflowWrap: 'break-word',
+            whiteSpace: 'normal',
+            lineHeight: 1.25,
           }}
         >
-          CROP: 112×112px | NORM: L2 UNIT EMBEDDING | DIM: 512-FLOAT
+          CROP: 112×112px | NORM: L2 UNIT | DIM: 512-FLOAT
         </div>
       </div>
 
@@ -202,7 +211,7 @@ export const SensorFeedView: React.FC<SensorFeedViewProps> = ({ camera }) => {
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 130px), 1fr))',
           gap: 'var(--space-2)',
           padding: 'var(--space-2) var(--space-3)',
           backgroundColor: 'var(--paper-pure)',

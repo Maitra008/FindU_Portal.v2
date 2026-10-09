@@ -217,7 +217,8 @@ export const ProblemSection: React.FC = () => {
             style={{
               border: '2px solid var(--ink)',
               backgroundColor: 'var(--paper-pure)',
-              padding: 'var(--space-6)',
+              padding: 'clamp(var(--space-4), 3vw, var(--space-6))',
+              minWidth: 0,
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-4)', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
@@ -230,10 +231,11 @@ export const ProblemSection: React.FC = () => {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
                 gap: 'var(--space-6)',
                 borderTop: '1px solid var(--ink-15)',
                 paddingTop: 'var(--space-4)',
+                minWidth: 0,
               }}
             >
               <div>
@@ -280,9 +282,10 @@ export const ProblemSection: React.FC = () => {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))',
               gap: 'var(--space-2)',
               marginBottom: 'var(--space-6)',
+              minWidth: 0,
             }}
           >
             {WORKFLOW_STEPS.map((step, idx) => {
@@ -321,11 +324,13 @@ export const ProblemSection: React.FC = () => {
             style={{
               border: '2px solid var(--ink)',
               backgroundColor: 'var(--paper-pure)',
-              padding: 'var(--space-8)',
+              padding: 'clamp(var(--space-4), 4vw, var(--space-8))',
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: 'var(--space-8)',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+              gap: 'clamp(var(--space-4), 4vw, var(--space-8))',
               alignItems: 'center',
+              minWidth: 0,
+              maxWidth: '100%',
             }}
           >
             {/* Step Left: Narrative Description */}
@@ -460,8 +465,9 @@ export const ProblemSection: React.FC = () => {
             style={{
               border: '2px solid var(--accent)',
               backgroundColor: 'var(--paper-pure)',
-              padding: 'var(--space-8)',
+              padding: 'clamp(var(--space-4), 4vw, var(--space-8))',
               marginBottom: 'var(--space-8)',
+              minWidth: 0,
             }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', marginBottom: 'var(--space-4)' }}>
@@ -481,10 +487,11 @@ export const ProblemSection: React.FC = () => {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
                 gap: 'var(--space-6)',
                 borderTop: '1px solid var(--ink-15)',
                 paddingTop: 'var(--space-6)',
+                minWidth: 0,
               }}
             >
               <div style={{ border: '1px solid var(--ink-15)', padding: 'var(--space-4)', backgroundColor: 'var(--paper)' }}>

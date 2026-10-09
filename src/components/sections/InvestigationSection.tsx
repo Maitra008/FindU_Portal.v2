@@ -152,6 +152,8 @@ export const InvestigationSection: React.FC = () => {
           flexDirection: 'column',
           gap: 'var(--space-6)',
           padding: 'clamp(var(--space-3), 3vw, var(--space-6))',
+          minWidth: 0,
+          maxWidth: '100%',
         }}
       >
         {/* Workspace Context Bar */}
@@ -164,9 +166,10 @@ export const InvestigationSection: React.FC = () => {
             alignItems: 'center',
             flexWrap: 'wrap',
             gap: 'var(--space-4)',
+            minWidth: 0,
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-1)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-1)', minWidth: 0 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', fontWeight: 700 }}>
                 INCIDENT: #{DEMO_INCIDENT.incidentId}
@@ -176,7 +179,7 @@ export const InvestigationSection: React.FC = () => {
                 Target: {DEMO_INCIDENT.subjectName} ({DEMO_INCIDENT.subjectId})
               </span>
             </div>
-            <div style={{ fontSize: '12px', color: 'var(--ink-70)' }}>
+            <div style={{ fontSize: '12px', color: 'var(--ink-70)', overflowWrap: 'break-word' }}>
               Operational Gate: Algorithmic vectors generate leads; only sworn operators authorize field dispatch.
             </div>
           </div>
@@ -205,7 +208,7 @@ export const InvestigationSection: React.FC = () => {
         </div>
 
         {/* Coordinated Topology & Timeline Block */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)', minWidth: 0, maxWidth: '100%' }}>
           <SchematicMap
             cameras={DEMO_CAMERAS}
             activeNodeId={activeNodeId}
@@ -228,6 +231,8 @@ export const InvestigationSection: React.FC = () => {
             gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
             gap: 'var(--space-6)',
             alignItems: 'start',
+            minWidth: 0,
+            maxWidth: '100%',
           }}
         >
           {/* Left Column: Live Sensor Viewport */}

@@ -20,14 +20,16 @@ export const InvestigationTimeline: React.FC<InvestigationTimelineProps> = ({
       style={{
         border: '1px solid var(--ink-15)',
         backgroundColor: 'var(--paper)',
-        padding: 'var(--space-4)',
+        padding: 'clamp(var(--space-3), 3vw, var(--space-4))',
         display: 'flex',
         flexDirection: 'column',
         gap: 'var(--space-3)',
+        minWidth: 0,
+        maxWidth: '100%',
       }}
     >
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
           <Clock size={14} style={{ color: 'var(--accent)' }} />
           <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
             Multi-Node Chronological Scrubber
@@ -42,7 +44,7 @@ export const InvestigationTimeline: React.FC<InvestigationTimelineProps> = ({
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
           gap: 'var(--space-2)',
         }}
       >

@@ -219,8 +219,9 @@ export const ValidationSection: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
             gap: 'var(--space-4)',
+            minWidth: 0,
           }}
         >
           {EMPIRICAL_METRICS.map((metric) => (
@@ -387,8 +388,9 @@ export const ValidationSection: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
             gap: 'var(--space-4)',
+            minWidth: 0,
           }}
         >
           <div style={{ padding: 'var(--space-3)', backgroundColor: 'var(--paper)', border: '1px solid var(--ink-15)' }}>
@@ -477,8 +479,9 @@ export const ValidationSection: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
             gap: 'var(--space-4)',
+            minWidth: 0,
           }}
         >
           {RESPONSIBLE_PRINCIPLES.map((principle) => (

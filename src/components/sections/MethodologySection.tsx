@@ -183,13 +183,7 @@ export const MethodologySection: React.FC = () => {
         </div>
 
         {/* 8-Stage Grid Scrubber */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))',
-            gap: 'var(--space-2)',
-          }}
-        >
+        <div className="methodology-stage-grid">
           {METHODOLOGY_STAGES.map((stg, idx) => {
             const isCurrent = idx === activeStepIndex;
             return (
@@ -208,15 +202,18 @@ export const MethodologySection: React.FC = () => {
                   flexDirection: 'column',
                   gap: '2px',
                   minHeight: '70px',
+                  minWidth: 0,
+                  width: '100%',
                 }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '2px 6px', width: '100%' }}>
                   <span
                     style={{
                       fontFamily: 'var(--font-mono)',
                       fontSize: '10px',
                       fontWeight: 700,
                       color: isCurrent ? 'var(--accent)' : 'var(--ink-70)',
+                      whiteSpace: 'nowrap',
                     }}
                   >
                     STAGE {stg.step}
@@ -226,6 +223,7 @@ export const MethodologySection: React.FC = () => {
                       fontFamily: 'var(--font-mono)',
                       fontSize: '9px',
                       color: 'var(--ink-50)',
+                      whiteSpace: 'nowrap',
                     }}
                   >
                     {stg.category}
@@ -237,6 +235,9 @@ export const MethodologySection: React.FC = () => {
                     fontWeight: 600,
                     color: 'var(--ink)',
                     wordBreak: 'break-word',
+                    overflowWrap: 'break-word',
+                    lineHeight: 1.25,
+                    marginTop: '2px',
                   }}
                   title={stg.title}
                 >
@@ -258,6 +259,8 @@ export const MethodologySection: React.FC = () => {
           flexDirection: 'column',
           gap: 'var(--space-6)',
           marginBottom: 'var(--space-8)',
+          minWidth: 0,
+          maxWidth: '100%',
         }}
       >
         {/* Stage Header Banner */}
@@ -272,21 +275,21 @@ export const MethodologySection: React.FC = () => {
             gap: 'var(--space-4)',
           }}
         >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-1)' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-1)', minWidth: 0, flex: '1 1 200px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
               <span className="badge-evidence accent">STAGE {activeStage.step} // {activeStage.category.toUpperCase()}</span>
               <span className="badge-evidence">{activeStage.latencySpec}</span>
             </div>
-            <h3 style={{ fontSize: 'var(--text-2xl)', marginTop: 'var(--space-1)', marginBottom: '0' }}>
+            <h3 style={{ fontSize: 'var(--text-2xl)', marginTop: 'var(--space-1)', marginBottom: '0', wordBreak: 'break-word', overflowWrap: 'break-word' }}>
               {activeStage.title}
             </h3>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--accent)', fontWeight: 600 }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: 'var(--accent)', fontWeight: 600, wordBreak: 'break-word' }}>
               {activeStage.tech}
             </div>
           </div>
 
           {/* Stepper Navigation Controls */}
-          <div style={{ display: 'flex', gap: 'var(--space-2)' }}>
+          <div style={{ display: 'flex', gap: 'var(--space-2)', flexWrap: 'wrap' }}>
             <button
               type="button"
               className="btn btn-secondary"
@@ -317,8 +320,8 @@ export const MethodologySection: React.FC = () => {
           }}
         >
           {/* Column A: Mathematical Principle & Formula */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-            <div style={{ border: '1px solid var(--ink-15)', padding: 'var(--space-4)', backgroundColor: 'var(--paper)' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-4)', minWidth: 0 }}>
+            <div style={{ border: '1px solid var(--ink-15)', padding: 'var(--space-4)', backgroundColor: 'var(--paper)', minWidth: 0 }}>
               <div style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: 'var(--ink-70)', marginBottom: 'var(--space-2)' }}>
                 MATHEMATICAL FORMULATION // COMPUTATION
               </div>
@@ -331,7 +334,8 @@ export const MethodologySection: React.FC = () => {
                   padding: 'var(--space-3)',
                   borderLeft: '3px solid var(--accent)',
                   color: 'var(--ink)',
-                  wordBreak: 'break-all',
+                  wordBreak: 'break-word',
+                  overflowWrap: 'anywhere',
                 }}
               >
                 {activeStage.formula}
@@ -411,7 +415,9 @@ export const MethodologySection: React.FC = () => {
         style={{
           border: '1px solid var(--ink-15)',
           backgroundColor: 'var(--paper)',
-          padding: 'var(--space-6)',
+          padding: 'clamp(var(--space-3), 3vw, var(--space-6))',
+          minWidth: 0,
+          maxWidth: '100%',
         }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-4)', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
@@ -421,14 +427,14 @@ export const MethodologySection: React.FC = () => {
           <span className="badge-evidence">8 Audited Boundary Gates</span>
         </div>
 
-        <div style={{ width: '100%', overflowX: 'auto' }}>
+        <div style={{ width: '100%', maxWidth: '100%', minWidth: 0, overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
           <table
             style={{
               width: '100%',
               borderCollapse: 'collapse',
               fontSize: 'var(--text-xs)',
               textAlign: 'left',
-              minWidth: '600px',
+              minWidth: '540px',
             }}
           >
             <thead>

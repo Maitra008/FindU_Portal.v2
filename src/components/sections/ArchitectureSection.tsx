@@ -223,8 +223,9 @@ export const ArchitectureSection: React.FC = () => {
         style={{
           border: '1px solid var(--ink-15)',
           backgroundColor: 'var(--paper)',
-          padding: 'var(--space-6)',
+          padding: 'clamp(var(--space-4), 3vw, var(--space-6))',
           marginBottom: 'var(--space-8)',
+          minWidth: 0,
         }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-4)', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
@@ -264,7 +265,7 @@ export const ArchitectureSection: React.FC = () => {
                 </span>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 'var(--space-2)', marginTop: 'var(--space-1)' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 'var(--space-2)', marginTop: 'var(--space-1)' }}>
                 {layer.duties.map((duty, idx) => (
                   <div key={idx} style={{ fontSize: '11px', color: 'var(--ink-80)', lineHeight: 1.4, paddingLeft: '8px', borderLeft: '2px solid var(--ink-15)' }}>
                     {duty}
@@ -281,8 +282,9 @@ export const ArchitectureSection: React.FC = () => {
         style={{
           border: '1px solid var(--ink-15)',
           backgroundColor: 'var(--paper-pure)',
-          padding: 'var(--space-6)',
+          padding: 'clamp(var(--space-4), 3vw, var(--space-6))',
           marginBottom: 'var(--space-8)',
+          minWidth: 0,
         }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 'var(--space-4)', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
@@ -295,7 +297,7 @@ export const ArchitectureSection: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))',
             gap: 'var(--space-4)',
           }}
         >
@@ -333,10 +335,11 @@ export const ArchitectureSection: React.FC = () => {
         style={{
           border: '1px solid var(--ink)',
           backgroundColor: 'var(--paper)',
-          padding: 'var(--space-6)',
+          padding: 'clamp(var(--space-4), 3vw, var(--space-6))',
           display: 'flex',
           flexDirection: 'column',
           gap: 'var(--space-4)',
+          minWidth: 0,
         }}
       >
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 'var(--space-2)' }}>
@@ -352,7 +355,7 @@ export const ArchitectureSection: React.FC = () => {
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))',
             gap: 'var(--space-4)',
           }}
         >

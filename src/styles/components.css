@@ -14,6 +14,7 @@
   gap: var(--space-2);
   min-height: 44px; /* Touch target requirement */
   min-width: 44px;
+  max-width: 100%;
   padding: var(--space-3) var(--space-5);
   font-family: var(--font-sans);
   font-size: var(--text-sm);
@@ -25,6 +26,14 @@
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .btn {
+    white-space: normal;
+    padding: var(--space-2) var(--space-3);
+  }
 }
 
 /* Primary Button: Solid Ink, White Paper Text */
@@ -244,15 +253,24 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .data-callout {
+    padding: var(--space-4);
+  }
 }
 
 .data-callout .metric-value {
   font-family: var(--font-mono);
-  font-size: clamp(2rem, 4vw, var(--text-4xl));
+  font-size: clamp(1.75rem, 4vw, var(--text-4xl));
   font-weight: var(--font-weight-semibold);
   color: var(--ink);
   line-height: var(--leading-none);
   letter-spacing: var(--tracking-tighter);
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .data-callout .metric-value.accent {
@@ -266,6 +284,7 @@
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
   color: var(--ink-70);
+  overflow-wrap: break-word;
 }
 
 .data-callout .metric-detail {
@@ -273,6 +292,7 @@
   font-size: var(--text-xs);
   color: var(--ink-50);
   line-height: var(--leading-snug);
+  overflow-wrap: break-word;
 }
 
 /* ==========================================================================
@@ -284,6 +304,7 @@
   border: 1px solid var(--ink-15);
   background-color: var(--paper-dim);
   overflow: hidden;
+  max-width: 100%;
 }
 
 .media-frame img {
@@ -303,6 +324,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  overflow-wrap: break-word;
 }
 
 /* Aspect Ratios */
@@ -350,6 +374,7 @@
   margin-right: auto;
   padding-left: var(--gutter-mobile);
   padding-right: var(--gutter-mobile);
+  min-width: 0;
 }
 
 @media (min-width: 768px) {
@@ -469,6 +494,13 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-4);
+  min-width: 0;
+}
+
+@media (max-width: 640px) {
+  .placeholder-panel {
+    padding: var(--space-4);
+  }
 }
 
 .placeholder-panel.accent-border {
@@ -488,8 +520,33 @@
   gap: var(--space-2);
 }
 
+/* Methodology 8-Stage Responsive Grid */
+.methodology-stage-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-2);
+}
+
+@media (max-width: 350px) {
+  .methodology-stage-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 600px) {
+  .methodology-stage-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .methodology-stage-grid {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+
 /* ==========================================================================
-   11. MOBILE NAVIGATION DRAWER
+   11. MOBILE NAVIGATION DRAWER & HEADER RESPONSIVENESS
    ========================================================================== */
 
 .mobile-menu-toggle {
@@ -501,6 +558,15 @@
   border: 1px solid var(--ink-15);
   background-color: var(--paper-pure);
   cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .header-cta {
+    display: none !important;
+  }
+  .header-viewport-badge {
+    display: none !important;
+  }
 }
 
 @media (max-width: 900px) {

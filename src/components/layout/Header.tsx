@@ -189,11 +189,11 @@ export const Header: React.FC = () => {
             </nav>
 
             {/* Action Group: CTA, Viewport Tag & Mobile Drawer Toggle */}
-            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 'clamp(var(--space-1), 2vw, var(--space-3))' }}>
               {/* Primary Header CTA */}
               <a
                 href="#investigation"
-                className="btn btn-primary"
+                className="btn btn-primary header-cta"
                 style={{
                   minHeight: '36px',
                   padding: '4px 12px',
@@ -207,6 +207,7 @@ export const Header: React.FC = () => {
 
               {/* Viewport Diagnostic Badge */}
               <span
+                className="header-viewport-badge"
                 style={{
                   fontFamily: 'var(--font-mono)',
                   fontSize: 'var(--text-xs)',

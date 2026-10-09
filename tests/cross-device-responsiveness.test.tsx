@@ -4,8 +4,11 @@ import App from '../src/App';
 
 const VIEWPORTS = [
   { name: 'Ultra-narrow Mobile (320px)', width: 320, height: 568 },
+  { name: 'Android Compact (360px)', width: 360, height: 740 },
   { name: 'Compact Mobile (375px)', width: 375, height: 667 },
-  { name: 'Standard Mobile (412px)', width: 412, height: 915 },
+  { name: 'Modern iPhone (390px)', width: 390, height: 844 },
+  { name: 'Standard Android Mobile (412px)', width: 412, height: 915 },
+  { name: 'iPhone Plus/Max (430px)', width: 430, height: 932 },
   { name: 'Tablet Portrait (768px)', width: 768, height: 1024 },
   { name: 'Small Laptop / Tablet Landscape (1024px)', width: 1024, height: 768 },
   { name: 'Full Desktop (1440px)', width: 1440, height: 900 },
