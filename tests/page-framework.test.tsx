@@ -33,8 +33,12 @@ describe('Phase P2: Responsive Architecture & Page Framework Verification', () =
     expect(main).toBeInTheDocument();
     expect(main?.tagName.toLowerCase()).toBe('main');
 
-    // Footer landmark
-    expect(screen.getByRole('contentinfo')).toBeInTheDocument();
+    // Footer landmark and bottom colophon verification
+    const footer = screen.getByRole('contentinfo');
+    expect(footer).toBeInTheDocument();
+    expect(footer).toHaveTextContent('Copyright © 2026 Partho Maitra.');
+    expect(footer).toHaveTextContent('MIT LICENSE');
+    expect(footer).toHaveTextContent('FROZEN THRESHOLD θ = 0.8900');
 
     // Skip link
     const skipLink = screen.getByRole('link', { name: /skip to main content/i });

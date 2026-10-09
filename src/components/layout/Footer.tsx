@@ -114,12 +114,28 @@ export const Footer: React.FC = () => {
             color: 'var(--ink-50)',
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
-            <Scale size={14} />
-            <span>MIT LICENSE · DESIGN CONSTITUTION: #FAF8F5 / #141414 / #C84B31</span>
+          {/* Left: Copyright Notice */}
+          <div style={{ color: 'var(--ink-70)', fontWeight: 'var(--font-weight-medium)' }}>
+            Copyright © 2026 Partho Maitra.
           </div>
-          <div>
-            FROZEN THRESHOLD θ = 0.8900 · TEST PRECISION 100% · RECALL 45.0%
+
+          {/* Right: Design Constitution & Evaluation Metrics */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: 'var(--space-4)',
+              columnGap: 'var(--space-6)',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)' }}>
+              <Scale size={14} />
+              <span>MIT LICENSE · DESIGN CONSTITUTION: #FAF8F5 / #141414 / #C84B31</span>
+            </div>
+            <div>
+              FROZEN THRESHOLD θ = 0.8900 · TEST PRECISION 100% · RECALL 45.0%
+            </div>
           </div>
         </div>
       </Container>
